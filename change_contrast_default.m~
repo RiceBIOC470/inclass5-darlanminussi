@@ -1,0 +1,31 @@
+% Darlan Conterno Minussi
+
+function output_change_contrast = change_contrast_default(figure, x, y)
+
+img = imread(figure);
+imshow(img);
+
+default = stretchlim(img)
+
+if nargin < 1 || isempty(x)
+  default(1,1);
+end
+if nargin < 2 || isempty(y)
+  default(1,2);
+end
+
+if isempty(x)
+x = default(1,1)
+img_adj = imadjust(img, stretchlim(img), [x y]);
+output_increase_contrast = imshow(img_adj);
+end
+
+if isempty(y)
+y = default(2,1)
+img_adj = imadjust(img, stretchlim(img), [x y]);
+output_increase_contrast = imshow(img_adj);
+end
+
+
+img_adj = imadjust(img, stretchlim(img), []);
+output_increase_contrast = imshow(img_adj);
