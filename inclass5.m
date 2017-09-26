@@ -1,3 +1,5 @@
+% AW: See comment below. 0.8/1.
+
 %Inclass assignment 5. 
 
 %original image
@@ -13,6 +15,11 @@ increase_contrast('cell.jpg');
 % (b) Write a second function where the fraction of pixels to display as
 % black or white are equal and can be specified as a second input to this
 % function. 
+
+%AW: Your function doesn't work as expected. As more pixels are assigned to black/white, it decreaess
+% rather than increases the contrast. Statement in function Should be: -0.2.
+
+% img_adj = imadjust(img, stretchlim(img, [x y]));
 
 change_contrast('cell.jpg', 0.4, 0.5);
 
